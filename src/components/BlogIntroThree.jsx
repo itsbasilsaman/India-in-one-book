@@ -1,5 +1,5 @@
-import React, { useEffect, useRef } from 'react';
-import One from '../assets/Images/20.jpg';
+import  { useEffect, useRef } from 'react';
+// import One from '../assets/Images/20.jpg';
 import { Link } from 'react-router-dom';
 
 function BlogIntroThree() {
@@ -52,7 +52,7 @@ function BlogIntroThree() {
             <div className="about-visual_wrap">
               <div className="video_box">
                 <div className="video_bg">
-                  <img
+                  {/* <img
                     ref={imageRef}
                     src={One}
                     loading="eager"
@@ -60,7 +60,7 @@ function BlogIntroThree() {
                     srcSet={One}
                     alt="Travel Image"
                     className="parallax-img is-full slide-up"
-                  />
+                  /> */}
                 </div>
               </div>
             </div>
@@ -76,7 +76,7 @@ function BlogIntroThree() {
                   <a
                     ref={buttonRef}
                     href=" "
-                    className="button w-inline-block text-white font-semibold text-from-bottom"
+                    className="font-semibold text-white button w-inline-block text-from-bottom"
                   >
                     <p>Buy our package</p>
                   </a>

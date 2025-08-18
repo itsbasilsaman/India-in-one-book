@@ -1,6 +1,6 @@
-import React, { useEffect, useRef } from 'react';
-import Two from '../assets/Images/2.jpg';
-import { Link } from 'react-router-dom';
+import { useEffect, useRef } from 'react';
+// import Two from '../assets/Images/2.jpg';
+// import { Link } from 'react-router-dom';
 
 function RefundPolicy() {
    // Refs for the elements to animate
@@ -44,9 +44,9 @@ function RefundPolicy() {
           <div className="about-hero_wrap">
             <div className="max-width-700">
               <h1 ref={headingRef} className="heading-style-h1 text-from-bottom">
-                <span className=" ">Refund  
+                <span className="">Refund  
                 </span> 
-                <span className=" "> Policy</span>
+                <span className=""> Policy</span>
               </h1>
             </div>
             

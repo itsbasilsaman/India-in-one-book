@@ -1,5 +1,5 @@
  
-import Image from '../assets/Images/22.png'
+// import Image from '../assets'
 import { Link } from 'react-router-dom'
 
 function Footer() {
@@ -11,7 +11,7 @@ function Footer() {
           <div className="wrap_flex is-align-top">
             <div className="max-width-250">
               <div className="margin-bottom-8">
-                <img src={Image} alt="India in One Book Logo" className='lg:w-[140px]' />
+              India in One Book
               </div>
               <p className="text-size-medium">
                 Uniting India & the Arab world, one story at a time.

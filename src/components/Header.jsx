@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
-import Image from '../assets/Images/22.png'
+import  { useEffect, useState } from "react";
+// import Image from '../assets/Images/22.png'
 import { IoClose } from "react-icons/io5";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 function Header() {
   const [isVisible, setIsVisible] = useState(false);
@@ -70,7 +70,7 @@ function Header() {
             aria-current="page"
             className="nav_brand w-nav-brand w--current"
           >
-              <img src={Image}   className="lg:w-[140px] w-[120px]" />
+                  <div className="text-white z-index-2">India in One Book</div>
               
             <div className="link_line" />
           </a>
@@ -81,14 +81,14 @@ function Header() {
                   
                     <a href="#"
                   onClick={() => smoothScroll("home")} className="nav_link w-inline-block">
-                      <div className="z-index-2 text-white">Home</div>
+                      <div className="text-white z-index-2">Home</div>
                       <div className="link_line" />
                     </a>
                  
                   
                     <a href="#"
                   onClick={() => smoothScroll("ourblog")} className="nav_link w-inline-block">
-                      <div className="z-index-2 text-white">Our Blog</div>
+                      <div className="text-white z-index-2">Our Blog</div>
                       <div className="link_line" />
                     </a>
                
@@ -100,13 +100,13 @@ function Header() {
               >
                   <a href="#"
                   onClick={() => smoothScroll("package")} className="nav_link w-inline-block">
-                    <div className="z-index-2 text-white">Packages</div>
+                    <div className="text-white z-index-2">Packages</div>
                     <div className="link_line" />
                   </a>
                
                   <a  href="#"
                   onClick={() => smoothScroll("about")} className="nav_link w-inline-block">
-                    <div className="z-index-2 text-white">About</div>
+                    <div className="text-white z-index-2">About</div>
                     <div className="link_line" />
                   </a>
               

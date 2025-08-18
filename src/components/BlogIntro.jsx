@@ -1,5 +1,5 @@
-import React, { useEffect, useRef } from 'react';
-import One from '../assets/Images/24.jpg';
+import   { useEffect, useRef } from 'react';
+// import One from '../assets/Images/24.jpg';
 import { Link } from 'react-router-dom';
 
 function BlogIntro() {
@@ -52,7 +52,7 @@ function BlogIntro() {
             <div className="about-visual_wrap">
               <div className="video_box">
                 <div className="video_bg">
-                  <img
+                  {/* <img
                     ref={imageRef}
                     src={One}
                     loading="eager"
@@ -60,14 +60,14 @@ function BlogIntro() {
                     srcSet={One}
                     alt="Travel Image"
                     className="parallax-img is-full slide-up"
-                  />
+                  /> */}
                 </div>
               </div>
             </div>
             <div className="w-layout-vflex flex-center">
               <div className="max-width-800">
                 <p ref={paragraphRef} className="text-size-medium text-from-bottom">
-                  Beyond our windows lies a world of experiences, curiosities, and knowledge that only travel can offer. Travel isn't just about visiting new places; it's about discovering yourself, broadening your horizons, and creating lasting memories. It opens doors to diverse cultures, unfamiliar perspectives, and profound connections. Through travel, we embrace the beauty of the unknown and the adventure of the journey.
+                  Beyond our windows lies a world of experiences, curiosities, and knowledge that only travel can offer. Travel isn&rsquo;t just about visiting new places; it&#39;s about discovering yourself, broadening your horizons, and creating lasting memories. It opens doors to diverse cultures, unfamiliar perspectives, and profound connections. Through travel, we embrace the beauty of the unknown and the adventure of the journey.
                 </p>
               </div>
               <div className="margin-top-24">
@@ -75,7 +75,7 @@ function BlogIntro() {
                   <a
                     ref={buttonRef}
                     href=" "
-                    className="button w-inline-block text-white font-semibold text-from-bottom"
+                    className="font-semibold text-white button w-inline-block text-from-bottom"
                   >
                     <p>Buy our package</p>
                   </a>

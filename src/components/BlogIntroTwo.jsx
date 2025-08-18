@@ -1,5 +1,5 @@
-import React, { useEffect, useRef } from 'react';
-import Two from '../assets/Images/52.1.jpg';
+import  { useEffect, useRef } from 'react';
+// import removed: '../assets/Images/52.1.jpg' (file missing)
 import { Link } from 'react-router-dom';
 
 function BlogIntroTwo() {
@@ -52,15 +52,7 @@ function BlogIntroTwo() {
             <div className="about-visual_wrap">
               <div className="video_box">
                 <div className="video_bg">
-                  <img
-                    ref={imageRef}
-                    src={Two}
-                    loading="eager"
-                    sizes="(max-width: 991px) 81vw, 90vw"
-                    srcSet={Two}
-                    alt="Travel Image"
-                    className="parallax-img is-full slide-up"
-                  />
+                  {/* Image removed due to missing file */}
                 </div>
               </div>
             </div>
@@ -75,7 +67,7 @@ function BlogIntroTwo() {
                   <a
                     ref={buttonRef}
                     href=" "
-                    className="button w-inline-block text-white font-semibold text-from-bottom"
+                    className="font-semibold text-white button w-inline-block text-from-bottom"
                   >
                     <p>Buy our package</p>
                   </a>
