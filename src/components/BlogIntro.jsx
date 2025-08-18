@@ -1,20 +1,55 @@
-import   { useEffect, useRef } from 'react';
-// import One from '../assets/Images/24.jpg';
+import { useEffect, useRef, useContext } from 'react';
+import LanguageContext from '../languageContext';
 import { Link } from 'react-router-dom';
 
+// Use image from public CDN
+const HeritageImage = "https://idsb.tmgrup.com.tr/ly/uploads/images/2021/06/13/121526.jpg";
+
 function BlogIntro() {
-  // Refs for the elements to animate
+  const { language } = useContext(LanguageContext);
+  const texts = {
+    en: {
+      heading: ["Discover India's", 'Hidden Heritage'],
+      desc: (
+        <>
+          Uncover stories, Islamic history, and places that only a local can share.<br />
+          Explore the mosques, monuments, and legends that shaped India’s soul.<br />
+          Every page reveals culture, wisdom, and hidden beauty—from vibrant Kerala to timeless Delhi.<br />
+          This journey isn’t just sight-seeing; it’s feeling the pulse of real India as interpreted by Muhammed Rafih, your companion and guide.<br /><br />
+          Start discovering the unseen—connect with India’s heart, heritage, and stories.
+        </>
+      ),
+      button: 'Download “India in One Book”',
+      imgAlt: 'Indian Hidden Heritage'
+    },
+    ar: {
+      heading: ['اكتشف', 'التراث الهندي الخفي'],
+      desc: (
+        <>
+          اكتشف القصص والتاريخ الإسلامي والأماكن التي لا يعرفها إلا السكان المحليون.<br />
+          استكشف المساجد والآثار والأساطير التي شكلت روح الهند.<br />
+          كل صفحة تكشف عن الثقافة والحكمة والجمال الخفي—من كيرالا النابضة بالحياة إلى دلهي الخالدة.<br />
+          هذه الرحلة ليست مجرد مشاهدة معالم؛ بل هي إحساس بنبض الهند الحقيقية كما يراها محمد رفيع، رفيقك ودليلك.<br /><br />
+          ابدأ باكتشاف المجهول—وتواصل مع قلب الهند وتراثها وقصصها.
+        </>
+      ),
+      button: 'حمّل "الهند في كتاب واحد"',
+      imgAlt: 'التراث الهندي الخفي'
+    }
+  };
+
+  // Refs for animation
   const headingRef = useRef(null);
   const paragraphRef = useRef(null);
   const buttonRef = useRef(null);
   const imageRef = useRef(null);
 
-  // Function to add visibility class when element is in view
+  // Intersection Observer logic
   const handleScrollAnimation = (entries, observer) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('visible');
-        observer.unobserve(entry.target); // Stop observing after it is visible
+        observer.unobserve(entry.target);
       }
     });
   };
@@ -24,7 +59,6 @@ function BlogIntro() {
       threshold: 0.1,
     });
 
-    // Observing elements for scroll-triggered animations
     if (headingRef.current) observer.observe(headingRef.current);
     if (paragraphRef.current) observer.observe(paragraphRef.current);
     if (buttonRef.current) observer.observe(buttonRef.current);
@@ -40,45 +74,45 @@ function BlogIntro() {
 
   return (
     <main className="main-wrapper">
-      <section data-w-id="dac3a0ad-1bc4-f50d-4480-37c180ea2f7d" className="section is-about-hero">
+      <section className="section is-about-hero">
         <div className="container-large">
           <div className="about-hero_wrap">
             <div className="max-width-700">
               <h1 ref={headingRef} className="heading-style-h1 text-from-bottom">
-                <span className="is-word is-1">Explore a</span> 
-                <span className="is-word is-2">World of Wonders</span>
+                <span className="is-word is-1">{texts[language].heading[0]}</span>
+                <span className="is-word is-2">{texts[language].heading[1]}</span>
               </h1>
             </div>
             <div className="about-visual_wrap">
               <div className="video_box">
                 <div className="video_bg">
-                  {/* <img
+                  <img
                     ref={imageRef}
-                    src={One}
+                    src={HeritageImage}
                     loading="eager"
                     sizes="(max-width: 991px) 81vw, 90vw"
-                    srcSet={One}
-                    alt="Travel Image"
+                    srcSet={HeritageImage}
+                    alt={texts[language].imgAlt}
                     className="parallax-img is-full slide-up"
-                  /> */}
+                    style={{ borderRadius: "16px", objectFit: "cover" }}
+                  />
                 </div>
               </div>
             </div>
             <div className="w-layout-vflex flex-center">
               <div className="max-width-800">
                 <p ref={paragraphRef} className="text-size-medium text-from-bottom">
-                  Beyond our windows lies a world of experiences, curiosities, and knowledge that only travel can offer. Travel isn&rsquo;t just about visiting new places; it&#39;s about discovering yourself, broadening your horizons, and creating lasting memories. It opens doors to diverse cultures, unfamiliar perspectives, and profound connections. Through travel, we embrace the beauty of the unknown and the adventure of the journey.
+                  {texts[language].desc}
                 </p>
               </div>
               <div className="margin-top-24">
                 <Link to={'/userinfo'} className='no-underline'>
-                  <a
+                  <button
                     ref={buttonRef}
-                    href=" "
                     className="font-semibold text-white button w-inline-block text-from-bottom"
                   >
-                    <p>Buy our package</p>
-                  </a>
+                    <p>{texts[language].button}</p>
+                  </button>
                 </Link>
               </div>
             </div>

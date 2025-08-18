@@ -1,8 +1,29 @@
  
 // import Image from '../assets'
-import { Link } from 'react-router-dom'
+
+
+import { useContext } from 'react';
+import LanguageContext from '../languageContext';
+import { Link } from 'react-router-dom';
 
 function Footer() {
+  const { language } = useContext(LanguageContext);
+  const texts = {
+    en: {
+      brand: 'India in One Book',
+      slogan: 'Uniting India & the Arab world, one story at a time.',
+      download: 'Download “India in One Book”',
+      copyright: '© 2025 indiainonebook.com. Crafted by Muhammed Rafih.',
+      gateway: 'Your Arabic gateway to a true Indian experience.'
+    },
+    ar: {
+      brand: 'الهند في كتاب واحد',
+      slogan: 'نجمع الهند والعالم العربي، قصة واحدة في كل مرة.',
+      download: 'تحميل "الهند في كتاب واحد"',
+      copyright: '© 2025 indiainonebook.com. صُنع بواسطة محمد رفيع.',
+      gateway: 'بوابتك العربية لتجربة هندية حقيقية.'
+    }
+  };
   return (
     <>
     <footer className="text-white bg-black section is-footer">
@@ -11,10 +32,10 @@ function Footer() {
           <div className="wrap_flex is-align-top">
             <div className="max-width-250">
               <div className="margin-bottom-8">
-              India in One Book
+                {texts[language].brand}
               </div>
               <p className="text-size-medium">
-                Uniting India & the Arab world, one story at a time.
+                {texts[language].slogan}
               </p>
             </div>
             <ul role="list" className="footer_links">
@@ -23,7 +44,7 @@ function Footer() {
                   <div className="z-index-2">
                     <Link to={'/userinfo'}>
                       <div className='font-semibold text-white'>
-                        Download “India in One Book”
+                        {texts[language].download}
                       </div>
                     </Link>
                   </div>
@@ -39,8 +60,9 @@ function Footer() {
           <div className="opacity-60">
             <div className="footer_copyright-inner">
               <p className="text-size-regular">
-                © 2025 indiainonebook.com. Crafted by Muhammed Rafih.  
-                Your Arabic gateway to a true Indian experience.
+                {texts[language].copyright}
+                <br />
+                {texts[language].gateway}
               </p>
             </div>
           </div>

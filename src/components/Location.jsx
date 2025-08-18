@@ -1,11 +1,69 @@
-import   { useEffect, useRef } from "react";
+import   { useEffect, useRef, useContext } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
  
 import { Link } from "react-router-dom";
+import LanguageContext from '../languageContext';
 
 function Location() {
   const cardRef = useRef([]);
+  const { language } = useContext(LanguageContext);
+  const texts = {
+    en: {
+      cards: [
+        {
+          heading: "Discover India's Hidden Heritage",
+          desc: "Uncover stories, Islamic history, and places only a local can share."
+        },
+        {
+          heading: "Kerala: Where India Meets Arabia",
+          desc: "Experience the culture, nature, and deep-rooted bonds with the Arab world."
+        },
+        {
+          heading: "Plan Smart – Travel Far",
+          desc: "Get insider advice on food, clinics, wellness and safe journeys."
+        },
+        {
+          heading: 'Create Memories in Every Chapter',
+          desc: 'From sacred traditions to Bollywood, experience it all—wonder, joy, and learning.'
+        }
+      ],
+      sectionHeading: [
+        "India",
+        "Through My Eyes:",
+        "Culture,",
+        "Secrets,",
+        "Inspiration"
+      ]
+    },
+    ar: {
+      cards: [
+        {
+          heading: "اكتشف التراث الهندي الخفي",
+          desc: "اكتشف القصص والتاريخ الإسلامي وأماكن لا يعرفها إلا السكان المحليون."
+        },
+        {
+          heading: "كيرالا: حيث تلتقي الهند بالعالم العربي",
+          desc: "عِش الثقافة والطبيعة والروابط العميقة مع العالم العربي."
+        },
+        {
+          heading: "خطط بذكاء – وسافر بعيدًا",
+          desc: "احصل على نصائح من الداخل حول الطعام والعيادات والصحة ورحلات آمنة."
+        },
+        {
+          heading: 'اصنع ذكريات في كل فصل',
+          desc: 'من التقاليد المقدسة إلى بوليوود، عِش كل شيء—الدهشة، الفرح، والتعلم.'
+        }
+      ],
+      sectionHeading: [
+        "الهند",
+        "بعيني:",
+        "الثقافة،",
+        "الأسرار،",
+        "الإلهام"
+      ]
+    }
+  };
 
   useEffect(() => {
     AOS.init({
@@ -48,11 +106,11 @@ function Location() {
                   data-aos="fade-up"
                   data-aos-delay="100"
                 >
-                  <span className="is-word is-1">India</span>{" "}
-                  <span className="is-word is-2">Through My Eyes:</span>{" "}
-                  <span className="is-word is-3">Culture,</span>{" "}
-                  <span className="is-word is-5">Secrets,</span>{" "}
-                  <span className="is-word is-6">Inspiration</span>
+                  <span className="is-word is-1">{texts[language].sectionHeading[0]}</span>{" "}
+                  <span className="is-word is-2">{texts[language].sectionHeading[1]}</span>{" "}
+                  <span className="is-word is-3">{texts[language].sectionHeading[2]}</span>{" "}
+                  <span className="is-word is-5">{texts[language].sectionHeading[3]}</span>{" "}
+                  <span className="is-word is-6">{texts[language].sectionHeading[4]}</span>
                 </h2>
               </div>
             </div>
@@ -75,8 +133,8 @@ function Location() {
                 />
                 <div className="locations_card_overlay" />
                 <div className="z-index-3">
-                  <p className="heading-style-h3">Discover India&#39;s Hidden Heritage</p>
-                  <p>Uncover stories, Islamic history, and places only a local can share.</p>
+                  <p className="heading-style-h3">{texts[language].cards[0].heading}</p>
+                  <p>{texts[language].cards[0].desc}</p>
                 </div>
               </li>
             </Link>
@@ -97,8 +155,8 @@ function Location() {
                 />
                 <div className="locations_card_overlay" />
                 <div className="z-index-3">
-                  <p className="heading-style-h3">Kerala: Where India Meets Arabia</p>
-                  <p>Experience the culture, nature, and deep-rooted bonds with the Arab world.</p>
+                  <p className="heading-style-h3">{texts[language].cards[1].heading}</p>
+                  <p>{texts[language].cards[1].desc}</p>
                 </div>
               </li>
             </Link>
@@ -119,10 +177,8 @@ function Location() {
                 />
                 <div className="locations_card_overlay" />
                 <div className="z-index-3">
-                  <p className="heading-style-h3">
-                    Plan Smart – Travel Far
-                  </p>
-                  <p>Get insider advice on food, clinics, wellness and safe journeys.</p>
+                  <p className="heading-style-h3">{texts[language].cards[2].heading}</p>
+                  <p>{texts[language].cards[2].desc}</p>
                 </div>
               </li>
             </Link>
@@ -143,8 +199,8 @@ function Location() {
                 />
                 <div className="locations_card_overlay" />
                 <div className="z-index-3">
-                  <p className="heading-style-h3">Create Memories in Every Chapter</p>
-                  <p>From sacred traditions to Bollywood, experience it all—wonder, joy, and learning.</p>
+                  <p className="heading-style-h3">{texts[language].cards[3].heading}</p>
+                  <p>{texts[language].cards[3].desc}</p>
                 </div>
               </li>
             </Link>
