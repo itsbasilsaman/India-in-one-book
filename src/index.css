@@ -1,11 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&display=swap');
-/* Apply Rubik font to all Arabic text in the project */
-:lang(ar), [lang="ar"] {
-  font-family: 'Rubik', sans-serif !important;
-}
-@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 
-/* Use Rubik font for Arabic text only */
 /* Use IBM Plex Sans Arabic for all Arabic text */
 .arabic-font {
   font-family: 'IBM Plex Sans Arabic', sans-serif !important;
