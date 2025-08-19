@@ -65,7 +65,7 @@ function SectionTwo() {
             <h2
               className={`heading-style-h2 box-title is-word item main-c is-1 ${isVisible ? "animate" : ""}`}
               style={{
-                wordSpacing: "0.4rem",
+                textTransform: 'capitalize',
                 textAlign: language === 'ar' ? 'right' : 'left'
               }}
             >

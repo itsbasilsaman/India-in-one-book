@@ -10,14 +10,14 @@ function Footer() {
   const { language } = useContext(LanguageContext);
   const texts = {
     en: {
-      brand: 'India in One Book',
+      brand: <img src="/white-logo.png" alt="India in One Book" style={{  width: 'auto'}} />, // image for brand
       slogan: 'Uniting India & the Arab world, one story at a time.',
       download: 'Download “India in One Book”',
       copyright: '© 2025 indiainonebook.com. Crafted by Muhammed Rafih.',
       gateway: 'Your Arabic gateway to a true Indian experience.'
     },
     ar: {
-      brand: 'الهند في كتاب واحد',
+      brand: <img src="/white-logo.png" alt="الهند في كتاب واحد" style={{height: '40px', width: 'auto'}} />, // image for brand
       slogan: 'نجمع الهند والعالم العربي، قصة واحدة في كل مرة.',
       download: 'تحميل "الهند في كتاب واحد"',
       copyright: '© 2025 indiainonebook.com. صُنع بواسطة محمد رفيع.',

@@ -90,7 +90,7 @@ function Header() {
             aria-current="page"
             className="nav_brand w-nav-brand w--current"
           >
-            <div className="text-white z-index-2">{texts[language].brand}</div>
+            <img src="/white-logo.png" alt="Brand Logo" className="w-auto z-index-2" />
             <div className="link_line" />
           </a>
           {/* Language Switcher */}
@@ -127,12 +127,12 @@ function Header() {
                   
                     <a href="#"
                   onClick={() => smoothScroll("home")} className="nav_link w-inline-block">
-                      <div className="text-white z-index-2">{texts[language].home}</div>
+                      <div className="text-white text-[16px] z-index-2 font-semibold" style={{ fontFamily: "'Montserrat', sans-serif" }}>{texts[language].home}</div>
                       <div className="link_line" />
                     </a>
                     <a href="#"
                   onClick={() => smoothScroll("ourblog")} className="nav_link w-inline-block">
-                      <div className="text-white z-index-2">{texts[language].blog}</div>
+                      <div className="text-white text-[16px] z-index-2 font-semibold" style={{ fontFamily: "'Montserrat', sans-serif" }}>{texts[language].blog}</div>
                       <div className="link_line" />
                     </a>
                
@@ -144,12 +144,12 @@ function Header() {
               >
                   <a href="#"
                   onClick={() => smoothScroll("package")} className="nav_link w-inline-block">
-                    <div className="text-white z-index-2">{texts[language].packages}</div>
+                    <div className="text-white text-[16px] z-index-2 font-semibold" style={{ fontFamily: "'Montserrat', sans-serif" }}>{texts[language].packages}</div>
                     <div className="link_line" />
                   </a>
                   <a  href="#"
                   onClick={() => smoothScroll("about")} className="nav_link w-inline-block">
-                    <div className="text-white z-index-2">{texts[language].about}</div>
+                    <div className="text-white text-[16px] z-index-2 font-semibold" style={{ fontFamily: "'Montserrat', sans-serif" }}>{texts[language].about}</div>
                     <div className="link_line" />
                   </a>
               

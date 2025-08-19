@@ -47,7 +47,7 @@ function SectionOne() {
         <p className="mb-2 text-sm text-gray-600">{texts[language].subtitle}</p>
         <h1
           className="mb-6 text-3xl font-bold leading-tight text-gray-800 md:text-5xl"
-          style={{ wordSpacing: "0.5rem" }}
+         
         >
           {texts[language].title}
         </h1>
