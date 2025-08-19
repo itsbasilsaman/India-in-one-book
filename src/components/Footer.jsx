@@ -17,7 +17,7 @@ function Footer() {
       gateway: 'Your Arabic gateway to a true Indian experience.'
     },
     ar: {
-      brand: <img src="/white-logo.png" alt="الهند في كتاب واحد" style={{height: '40px', width: 'auto'}} />, // image for brand
+      brand: <img src="/white-logo.png" alt="الهند في كتاب واحد" style={{  width: 'auto'}} />, // image for brand
       slogan: 'نجمع الهند والعالم العربي، قصة واحدة في كل مرة.',
       download: 'تحميل "الهند في كتاب واحد"',
       copyright: '© 2025 indiainonebook.com. صُنع بواسطة محمد رفيع.',
